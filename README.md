@@ -1,5 +1,12 @@
 # Projeto-Lagarta
 
+Gabriel Pissoli Padrao  RA:10723368
+
+Luana Medeiros RA:10765540
+
+Mariana Dantas RA:10780967
+
+
 *Início (Home)*
 Descrição: Apresentação institucional de alto impacto com destaque para animais em evidência, contadores estatísticos da ONG e acesso rápido às áreas do site.
   Recursos & Interações em JS:
