@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esperança Animal - Cães para Adoção</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="Logo Esperança Animal">
+      <span>Esperança Animal</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre a ONG</a>
+      <a href="caes.html">Cães para Adoção</a>
+      <a href="gatos.html">Gatos para Adoção</a>
+      <a href="como-adotar.html">Como Adotar</a>
+      <a href="cadastrar-animal.html">Cadastrar Animal</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <aside>
+      <a href="apoie.html">Apoie a ONG</a>
+      <a href="login.html">Login</a>
+    </aside>
+  </header>
+
+  <main>
+    <h1>Cães para Adoção</h1>
+
+    <aside>
+      <h2>Filtro Cães</h2>
+      <form>
+        <fieldset>
+          <legend>Porte</legend>
+          <select name="porte">
+            <option value="">Portes</option>
+            <option value="pequeno">Pequeno</option>
+            <option value="medio">Médio</option>
+            <option value="grande">Grande</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Idade</legend>
+          <input type="range" min="0" max="15" name="idade">
+        </fieldset>
+        <fieldset>
+          <legend>Sexo</legend>
+          <label><input type="radio" name="sexo" value="macho"> Macho</label>
+          <label><input type="radio" name="sexo" value="femea"> Fêmea</label>
+        </fieldset>
+        <button type="submit">Filtrar seus cães</button>
+      </form>
+    </aside>
+
+    <section>
+      <article>
+        <img src="mel.png" alt="Mel">
+        <h3>Mel</h3>
+        <p>13 anos 7 meses • Temperamento Dócil</p>
+        <button type="button">Ver Detalhes</button>
+      </article>
+      <article>
+        <img src="cao2.png" alt="Cão para adoção">
+        <h3>Mel</h3>
+        <p>3 anos 7 meses • Temperamento Dócil</p>
+        <button type="button">Ver Detalhes</button>
+      </article>
+      <article>
+        <img src="cao3.png" alt="Cão para adoção">
+        <h3>Sisi</h3>
+        <p>3 anos 7 meses • Temperamento Dócil</p>
+        <button type="button">Ver Detalhes</button>
+      </article>
+
+      <dialog open>
+        <header>
+          <h2>Mel</h2>
+          <button type="button" aria-label="Fechar">X</button>
+        </header>
+        <figure>
+          <img src="mel-detalhe.png" alt="Mel">
+        </figure>
+        <dl>
+          <dt>Nome:</dt>
+          <dd>Mel</dd>
+          <dt>Sexo:</dt>
+          <dd>Fêmea</dd>
+          <dt>Resgatado:</dt>
+          <dd>Sim</dd>
+          <dt>Temperamento:</dt>
+          <dd>Calma</dd>
+        </dl>
+        <section>
+          <h3>Resgate História</h3>
+          <p>Resgatada de maus tratos em via pública.</p>
+        </section>
+        <section>
+          <h3>Registro Médicos</h3>
+          <p>Registros veterinários: histórico de exames em dia.</p>
+        </section>
+        <footer>
+          <a href="como-adotar.html">Quero Adotar</a>
+        </footer>
+      </dialog>
+    </section>
+  </main>
+
+  <footer>
+    <section>
+      <img src="logo.png" alt="Logo Esperança Animal">
+      <p>Esperança Animal • Transformando vidas através do amor e cuidado.</p>
+    </section>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="caes.html">Adotar</a>
+      <a href="apoie.html">Apoiar</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <section>
+      <small>&copy; Esperança Animal. Todos os direitos reservados.</small>
+    </section>
+  </footer>
+
+</body>
+
+</html>
