@@ -12,12 +12,6 @@ Este repositório contém a documentação técnica e o guia de implementação 
 
 O projeto foi construído focando em **HTML5 totalmente semântico**, sem a utilização de frameworks, CSS inline, scripts inline ou seletores de `id` (priorizando a hierarquia semântica dos elementos e seletores de atributos).
 
-# 🐾 Esperança Animal — Guia Técnico de Implementação
-
-> **Arquitetura e Diretrizes Frontend** para a plataforma web da ONG **Esperança Animal**, focada em acessibilidade, semântica nativa e performance sem dependências de frameworks.
-
----
-
 ## 🛠️ Tecnologias & Diretrizes Técnicas
 
 * **HTML5 Semântico:** Estruturação através de tags nativas (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<dialog>`, `<details>`, `<summary>`).
