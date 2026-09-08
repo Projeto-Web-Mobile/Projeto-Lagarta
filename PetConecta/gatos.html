@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetConecta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+    <header class="cabecalho-principal">
+        <a href="#inicio" class="logo-container" aria-label="Página inicial da PetConecta">
+            <img src="logo.png" alt="Logo da PetConecta" class="logo">
+            <hgroup class="marca">
+                <h1>PetConecta</h1>
+            </hgroup>
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+        <label for="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-controls="menu-principal">
+            <span></span>
+            <span></span>
+        </label>
+
+ 
+        <nav aria-label="Menu principal" id="menu-principal">
+            <a href="ong.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="caes.html">Cães</a>
+            <a href="gatos.html" class="ativo">Gatos</a>
+            <a href="cadastro.html">Cadastrar animal</a>
+            <a href="adotar.html">Como adotar</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+ 
+    <main>
+
+        <section class="secao-titulo">
+            <h1>Gatos para Adoção</h1>
+        </section>
+
+        <section class="secao-catalogo">
+
+            <aside class="filtro-gatos">
+                <h2>Filtro Gatos</h2>
+                <form>
+                    <label for="raca-gato">Raça</label>
+                    <select id="raca-gato" name="raca">
+                        <option value="">Todas</option>
+                        <option value="srd">SRD</option>
+                        <option value="siames">Siamês</option>
+                        <option value="persa">Persa</option>
+                    </select>
+
+                    <label for="sexo-gato">Sexo</label>
+                    <select id="sexo-gato" name="sexo">
+                        <option value="">Ambos</option>
+                        <option value="macho">Macho</option>
+                        <option value="femea">Fêmea</option>
+                    </select>
+
+                    <label for="ambiente-gato">Exigência de Ambiente</label>
+                    <select id="ambiente-gato" name="ambiente">
+                        <option value="">Nenhuma</option>
+                        <option value="tela">Telas de proteção obrigatórias</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="quintal">Casa com quintal</option>
+                    </select>
+
+                    <button type="submit">Filtrar nossos gatos</button>
+                </form>
+            </aside>
+
+            <section class="lista-gatos">
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/neo/400/300" alt="Foto do gato Oliver">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Oliver"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Oliver</h3>
+                    <p>Macho &middot; 3 anos e 7 meses</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-oliver').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/millie/400/300" alt="Foto da gata Nina">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Nina"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Nina</h3>
+                    <p>Fêmea &middot; 1 ano</p>
+                    <p>Raça: Siamês</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-nina').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/bella/400/300" alt="Foto do gato Fred">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Fred"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Fred</h3>
+                    <p>Macho &middot; 2 anos</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-fred').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/poppy/400/300" alt="Foto da gata Mia">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Mia"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Mia</h3>
+                    <p>Fêmea &middot; 8 meses</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-mia').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/louie/400/300" alt="Foto do gato Simba">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Simba"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Simba</h3>
+                    <p>Macho &middot; 3 anos</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-simba').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/neo_2/400/300" alt="Foto da gata Luna">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Luna"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Luna</h3>
+                    <p>Fêmea &middot; 1 ano e 4 meses</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-luna').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/neo_banana/400/300" alt="Foto do gato Toby">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Toby"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Toby</h3>
+                    <p>Macho &middot; 5 anos</p>
+                    <p>Raça: Persa</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-toby').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/millie_neo/400/300" alt="Foto da gata Cléo">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Cléo"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Cléo</h3>
+                    <p>Fêmea &middot; 7 meses</p>
+                    <p>Raça: Siamês</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-cleo').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/400/300" alt="Foto do gato Bento">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Bento"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Bento</h3>
+                    <p>Macho &middot; 6 anos</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-bento').showModal()">Ver detalhes</button>
+                </article>
+
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placecats.com/bella/400/300?position=top" alt="Foto da gata Pandora">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Pandora"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Pandora</h3>
+                    <p>Fêmea &middot; 2 anos</p>
+                    <p>Raça: SRD</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-pandora').showModal()">Ver detalhes</button>
+                </article>
+
+            </section>
+
+        </section>
+
+        <dialog class="modal-animal" id="modal-oliver">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-oliver').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/neo/600/375" alt="Foto do gato Oliver">
+            </figure>
+            <h2>Oliver</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Oliver</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Temperamento</dt>
+                <dd>Tímido no início, carinhoso</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-nina">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-nina').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/millie/600/375" alt="Foto da gata Nina">
+            </figure>
+            <h2>Nina</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Nina</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Temperamento</dt>
+                <dd>Brincalhona e sociável</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-fred">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-fred').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/bella/600/375" alt="Foto do gato Fred">
+            </figure>
+            <h2>Fred</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Fred</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Temperamento</dt>
+                <dd>Calmo e independente</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-mia">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-mia').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/poppy/600/375" alt="Foto da gata Mia">
+            </figure>
+            <h2>Mia</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Mia</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Temperamento</dt>
+                <dd>Curiosa e agitada</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-simba">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-simba').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/louie/600/375" alt="Foto do gato Simba">
+            </figure>
+            <h2>Simba</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Simba</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Temperamento</dt>
+                <dd>Confiante e brincalhão</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-luna">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-luna').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/neo_2/600/375" alt="Foto da gata Luna">
+            </figure>
+            <h2>Luna</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Luna</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Temperamento</dt>
+                <dd>Observadora e independente</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-toby">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-toby').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/neo_banana/600/375" alt="Foto do gato Toby">
+            </figure>
+            <h2>Toby</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Toby</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Temperamento</dt>
+                <dd>Preguiçoso e amoroso</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-cleo">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-cleo').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/millie_neo/600/375" alt="Foto da gata Cléo">
+            </figure>
+            <h2>Cléo</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Cléo</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Temperamento</dt>
+                <dd>Elétrica e curiosa</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-bento">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-bento').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/600/375" alt="Foto do gato Bento">
+            </figure>
+            <h2>Bento</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Bento</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Temperamento</dt>
+                <dd>Sereno, ideal para casas calmas</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-pandora">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-pandora').close()">✕</button>
+            <figure>
+                <img src="https://placecats.com/bella/600/375?position=top" alt="Foto da gata Pandora">
+            </figure>
+            <h2>Pandora</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Pandora</dd>
+                <dt>Estado</dt>
+                <dd>Disponível</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Temperamento</dt>
+                <dd>Territorial no início, depois é só carinho</dd>
+                <dt>Vacinações</dt>
+                <dd>Testes de leucemia e imunodeficiência felina negativos</dd>
+                <dt>Vacinações status</dt>
+                <dd>Completo</dd>
+                <dt>Vacinação obrigatória</dt>
+                <dd>Sim</dd>
+            </dl>
+            <p class="aviso-ambiente">
+                <span class="material-symbols-outlined">shield</span>
+                Telas de proteção obrigatórias — recomendamos a instalação de telas em janelas e sacadas antes da adoção deste felino.
+            </p>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+    </main>
+
+    <footer class="rodape-principal">
+        <section class="rodape-cta">
+            <div>
+                <h2>Pronto para mudar uma vida?</h2>
+                <p>Conheça os animais disponíveis para adoção e comece hoje mesmo o processo responsável com a nossa equipe.</p>
+            </div>
+            <a href="adotar.html" class="botao">Quero adotar</a>
+        </section>
+
+        <div class="rodape-colunas">
+            <section class="coluna-redes">
+                <img src="logo.png" alt="PetConecta" class="logo-rodape">
+                <strong>PetConecta</strong>
+                <p>Adote um amigo,<br>
+                     mude uma vida.</p>
+                <nav class="icones-redes" aria-label="Redes sociais">
+                    <a href="#" aria-label="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+                    <a href="#" aria-label="Facebook"><span class="material-symbols-outlined">thumb_up</span></a>
+                    <a href="#" aria-label="Youtube"><span class="material-symbols-outlined">play_circle</span></a>
+                </nav>
+            </section>
+
+            <section class="coluna-links">
+                <h3>Links rápidos</h3>
+                <nav aria-label="Links do rodapé">
+                    <a href="ong.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="caes.html">Cães</a>
+                    <a href="cadastro.html">Cadastrar animal</a>
+                    <a href="adotar.html">Como adotar</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </section>
+
+            <section class="coluna-endereco">
+                <article class="unidade">
+                    <h3>Abrigo PetConecta</h3>
+                    <span class="unidade-subtitulo">Visitas aos sábados, mediante agendamento</span>
+                    <address class="detalhes-marca">
+                        <span class="material-symbols-outlined">location_on</span>Av. Paulista, 1000 — São Paulo, SP<br>
+                        <span class="material-symbols-outlined">call</span>(11) 99999-9999<br>
+                        <a href="mailto:contato@petconecta.com.br"><span class="material-symbols-outlined">mail</span>contato@petconecta.com.br</a>
+                    </address>
+                </article>
+            </section>
+        </div>
+
+        <section class="coluna-direitos">
+            <p>&copy; 2026 PetConecta. Todos os direitos reservados.</p>
+        </section>
+    </footer>
+    
+</body>
+</html>

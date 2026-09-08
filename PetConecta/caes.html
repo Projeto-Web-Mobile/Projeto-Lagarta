@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetConecta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+    <header class="cabecalho-principal">
+        <a href="#inicio" class="logo-container" aria-label="Página inicial da PetConecta">
+            <img src="logo.png" alt="Logo da PetConecta" class="logo">
+            <hgroup class="marca">
+                <h1>PetConecta</h1>
+            </hgroup>
+        </a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+        <label for="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-controls="menu-principal">
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav aria-label="Menu principal" id="menu-principal">
+            <a href="ong.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="caes.html" class="ativo">Cães</a>
+            <a href="gatos.html">Gatos</a>
+            <a href="cadastro.html">Cadastrar animal</a>
+            <a href="adotar.html">Como adotar</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+ 
+    <main>
+
+        <section class="secao-titulo">
+            <h1>Cães para Adoção</h1>
+        </section>
+
+        <section class="secao-catalogo">
+            <aside class="filtro-caes">
+                <h2>Filtro Cães</h2>
+                <form>
+                    <label for="porte">Porte</label>
+                    <select id="porte" name="porte">
+                        <option value="">Todos</option>
+                        <option value="pequeno">Pequeno</option>
+                        <option value="medio">Médio</option>
+                        <option value="grande">Grande</option>
+                    </select>
+                    <label for="idade-cao">Idade</label>
+                    <select id="idade-cao" name="idade">
+                        <option value="">Todas</option>
+                        <option value="filhote">Filhote (0 – 1 ano)</option>
+                        <option value="adulto">Adulto (1 – 7 anos)</option>
+                        <option value="idoso">Idoso (7+ anos)</option>
+                    </select>
+                    <label for="sexo-cao">Sexo</label>
+                    <select id="sexo-cao" name="sexo">
+                        <option value="">Ambos</option>
+                        <option value="macho">Macho</option>
+                        <option value="femea">Fêmea</option>
+                    </select>
+                    <label for="energia">Nível de Energia</label>
+                    <input type="range" id="energia" name="energia" min="1" max="5" value="3">
+                    <button type="submit">Filtrar nossos cães</button>
+                </form>
+            </aside>
+
+            <section class="lista-caes">
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=48" alt="Foto do cão Mel">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Mel"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Mel</h3>
+                    <p>Fêmea &middot; 1 ano e 7 meses</p>
+                    <p>Temperamento: Dócil</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-mel').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=68" alt="Foto do cão Rex">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Rex"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Rex</h3>
+                    <p>Macho &middot; 2 anos</p>
+                    <p>Temperamento: Brincalhão</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-rex').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=106" alt="Foto do cão Thor">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Thor"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Thor</h3>
+                    <p>Macho &middot; 3 anos e 7 meses</p>
+                    <p>Temperamento: Calmo</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-thor').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=139" alt="Foto da cadela Bolinha">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Bolinha"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Bolinha</h3>
+                    <p>Fêmea &middot; 6 meses</p>
+                    <p>Temperamento: Agitada</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-bolinha').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=150" alt="Foto do cão Duque">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Duque"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Duque</h3>
+                    <p>Macho &middot; 4 anos</p>
+                    <p>Temperamento: Protetor</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-duque').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=10" alt="Foto do cão Pingo">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Pingo"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Pingo</h3>
+                    <p>Macho &middot; 8 meses</p>
+                    <p>Temperamento: Elétrico e brincalhão</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-pingo').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=3" alt="Foto do cão Sansão">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Sansão"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Sansão</h3>
+                    <p>Macho &middot; 5 anos</p>
+                    <p>Temperamento: Guardião e leal</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-sansao').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=87" alt="Foto da cadela Amora">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Amora"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Amora</h3>
+                    <p>Fêmea &middot; 2 anos</p>
+                    <p>Temperamento: Meiga e caseira</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-amora').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=208" alt="Foto da cadela Fifi">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Fifi"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Fifi</h3>
+                    <p>Fêmea &middot; 10 anos</p>
+                    <p>Temperamento: Tranquila e carinhosa</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-fifi').showModal()">Ver detalhes</button>
+                </article>
+                <article class="card-animal">
+                    <figure>
+                        <img src="https://placedog.net/400/300?id=142" alt="Foto do cão Zeca">
+                        <button type="button" class="botao-favorito" aria-label="Favoritar Zeca"><span class="material-symbols-outlined">favorite</span></button>
+                    </figure>
+                    <h3>Zeca</h3>
+                    <p>Macho &middot; 1 ano e 2 meses</p>
+                    <p>Temperamento: Curioso e sociável</p>
+                    <button type="button" class="botao-detalhes" onclick="document.getElementById('modal-zeca').showModal()">Ver detalhes</button>
+                </article>
+
+            </section>
+
+        </section>
+
+        <dialog class="modal-animal" id="modal-mel">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-mel').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=48" alt="Foto do cão Mel">
+            </figure>
+            <h2>Mel</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Mel</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Resgate</dt>
+                <dd>Encontrada abandonada em via pública</dd>
+                <dt>Temperamento</dt>
+                <dd>Dócil e calma</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, resgatada em 2024</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinada, vermifugada e castrada</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-rex">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-rex').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=68" alt="Foto do cão Rex">
+            </figure>
+            <h2>Rex</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Rex</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Resgate</dt>
+                <dd>Resgatado de canil clandestino</dd>
+                <dt>Temperamento</dt>
+                <dd>Brincalhão e sociável</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, resgatado em 2023</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinado, vermifugado e castrado</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-thor">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-thor').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=106" alt="Foto do cão Thor">
+            </figure>
+            <h2>Thor</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Thor</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Resgate</dt>
+                <dd>Entregue pelo antigo tutor</dd>
+                <dt>Temperamento</dt>
+                <dd>Calmo, ideal para idosos</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, resgatado em 2022</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinado, vermifugado e castrado</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-bolinha">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-bolinha').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=139" alt="Foto da cadela Bolinha">
+            </figure>
+            <h2>Bolinha</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Bolinha</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Resgate</dt>
+                <dd>Nascida no abrigo</dd>
+                <dt>Temperamento</dt>
+                <dd>Agitada e curiosa</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, filhote</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinada e vermifugada</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-duque">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-duque').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=150" alt="Foto do cão Duque">
+            </figure>
+            <h2>Duque</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Duque</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Resgate</dt>
+                <dd>Resgatado de um lar que fechou as portas</dd>
+                <dt>Temperamento</dt>
+                <dd>Protetor e atento</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, resgatado em 2021</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinado, vermifugado e castrado</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-pingo">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-pingo').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=10" alt="Foto do cão Pingo">
+            </figure>
+            <h2>Pingo</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Pingo</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Resgate</dt>
+                <dd>Encontrado sozinho em uma feira livre</dd>
+                <dt>Temperamento</dt>
+                <dd>Elétrico e brincalhão</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, filhote resgatado em 2026</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinado e vermifugado (castração agendada)</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-sansao">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-sansao').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=3" alt="Foto do cão Sansão">
+            </figure>
+            <h2>Sansão</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Sansão</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Resgate</dt>
+                <dd>Recolhido após situação de maus-tratos</dd>
+                <dt>Temperamento</dt>
+                <dd>Guardião e leal</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>Pit Bull misto, resgatado em 2020</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinado, vermifugado e castrado</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-amora">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-amora').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=87" alt="Foto da cadela Amora">
+            </figure>
+            <h2>Amora</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Amora</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Resgate</dt>
+                <dd>Deixada em frente ao abrigo</dd>
+                <dt>Temperamento</dt>
+                <dd>Meiga e caseira</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, resgatada em 2024</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinada, vermifugada e castrada</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-fifi">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-fifi').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=208" alt="Foto da cadela Fifi">
+            </figure>
+            <h2>Fifi</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Fifi</dd>
+                <dt>Sexo</dt>
+                <dd>Fêmea</dd>
+                <dt>Resgate</dt>
+                <dd>Tutora idosa não pôde mais cuidar dela</dd>
+                <dt>Temperamento</dt>
+                <dd>Tranquila e carinhosa</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>Poodle misto, entregue em 2025</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinada, vermifugada e castrada</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+        <dialog class="modal-animal" id="modal-zeca">
+            <button type="button" class="botao-fechar" aria-label="Fechar" onclick="document.getElementById('modal-zeca').close()">✕</button>
+            <figure>
+                <img src="https://placedog.net/600/375?id=142" alt="Foto do cão Zeca">
+            </figure>
+            <h2>Zeca</h2>
+            <dl>
+                <dt>Nome</dt>
+                <dd>Zeca</dd>
+                <dt>Sexo</dt>
+                <dd>Macho</dd>
+                <dt>Resgate</dt>
+                <dd>Resgatado de uma obra abandonada</dd>
+                <dt>Temperamento</dt>
+                <dd>Curioso e sociável</dd>
+                <dt>Raça e Histórico</dt>
+                <dd>SRD, resgatado em 2025</dd>
+                <dt>Registro médico</dt>
+                <dd>Vacinado, vermifugado e castrado</dd>
+            </dl>
+            <button type="button" class="botao">Quero Adotar</button>
+        </dialog>
+
+    </main>
+
+    <footer class="rodape-principal">
+        <section class="rodape-cta">
+            <div>
+                <h2>Pronto para mudar uma vida?</h2>
+                <p>Conheça os animais disponíveis para adoção e comece hoje mesmo o processo responsável com a nossa equipe.</p>
+            </div>
+            <a href="adotar.html" class="botao">Quero adotar</a>
+        </section>
+
+        <div class="rodape-colunas">
+            <section class="coluna-redes">
+                <img src="logo.png" alt="PetConecta" class="logo-rodape">
+                <strong>PetConecta</strong>
+                <p>Adote um amigo,<br>
+                     mude uma vida.</p>
+                <nav class="icones-redes" aria-label="Redes sociais">
+                    <a href="#" aria-label="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+                    <a href="#" aria-label="Facebook"><span class="material-symbols-outlined">thumb_up</span></a>
+                    <a href="#" aria-label="Youtube"><span class="material-symbols-outlined">play_circle</span></a>
+                </nav>
+            </section>
+
+            <section class="coluna-links">
+                <h3>Links rápidos</h3>
+                <nav aria-label="Links do rodapé">
+                    <a href="ong.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="gatos.html">Gatos</a>
+                    <a href="cadastro.html">Cadastrar animal</a>
+                    <a href="adotar.html">Como adotar</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </section>
+
+            <section class="coluna-endereco">
+                <article class="unidade">
+                    <h3>Abrigo PetConecta</h3>
+                    <span class="unidade-subtitulo">Visitas aos sábados, mediante agendamento</span>
+                    <address class="detalhes-marca">
+                        <span class="material-symbols-outlined">location_on</span>Av. Paulista, 1000 — São Paulo, SP<br>
+                        <span class="material-symbols-outlined">call</span>(11) 99999-9999<br>
+                        <a href="mailto:contato@petconecta.com.br"><span class="material-symbols-outlined">mail</span>contato@petconecta.com.br</a>
+                    </address>
+                </article>
+            </section>
+        </div>
+
+        <section class="coluna-direitos">
+            <p>&copy; 2026 PetConecta. Todos os direitos reservados.</p>
+        </section>
+    </footer>
+    
+</body>
+</html>
