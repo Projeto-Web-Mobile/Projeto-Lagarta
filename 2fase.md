@@ -49,6 +49,120 @@ Catálogos e formulários rodam no navegador (`"use client"`), porque mudam conf
 | `CopiarPix` e `CalculadoraDoacao` | O bloco de doação da Home |
 | `FormAdocao`, `FormContato`, `FormCadastro` | Os formulários sem envio |
 
+Na implementação entraram mais três componentes de apoio:
+
+| Componente | Para quê |
+| --- | --- |
+| `CatalogoAnimais` | Junta filtro, lista de cards e modal nas páginas de Cães e Gatos |
+| `FichaAnimal` | Conteúdo da ficha, usado no modal e na página `/animais/[id]` |
+| `MensagemForm` | Mensagem de sucesso ou erro dos três formulários |
+
+### Como os componentes se ligam
+
+Linha cheia: renderiza ou importa. Linha tracejada: chamada HTTP (`fetch`). Linha grossa: navegação entre páginas.
+
+```mermaid
+flowchart TD
+  subgraph LAYOUT["app/layout.tsx · envolve todas as páginas"]
+    direction LR
+    Header["Header"]
+    Footer["Footer"]
+  end
+
+  subgraph PAGINAS["Páginas (app/)"]
+    direction LR
+    Home["/ Home"]
+    Sobre["/sobre"]
+    Caes["/caes"]
+    Gatos["/gatos"]
+    AnimalId["/animais/[id]"]
+    Adotar["/adotar"]
+    Cadastro["/cadastro"]
+    Contato["/contato"]
+  end
+
+  subgraph COMP["Componentes (components/)"]
+    Carrossel["CarrosselDepoimentos"]
+    Calc["CalculadoraDoacao"]
+    Pix["CopiarPix"]
+    Catalogo["CatalogoAnimais"]
+    Filtro["FiltroAnimais"]
+    Card["AnimalCard"]
+    Modal["AnimalModal"]
+    Ficha["FichaAnimal"]
+    FAdocao["FormAdocao"]
+    FCadastro["FormCadastro"]
+    FContato["FormContato"]
+    Msg["MensagemForm"]
+  end
+
+  subgraph LIB["Funções e hooks (lib/)"]
+    apiGet["apiGet()"]
+    useFav["useFavoritos()"]
+    useEnvio["useEnvioForm()"]
+    valid["responderFormulario()"]
+  end
+
+  subgraph API["API (app/api/)"]
+    gAnimais["GET /api/animais"]
+    gAnimalId["GET /api/animais/[id]"]
+    gDep["GET /api/depoimentos"]
+    gOng["GET /api/ong"]
+    pForms["POST /api/adocao<br/>/api/cadastro<br/>/api/contato"]
+  end
+
+  subgraph DATA["Dados (data/)"]
+    jAnimais[("animais.json")]
+    jDep[("depoimentos.json")]
+    jOng[("ong.json")]
+  end
+
+  Home --> Carrossel & Calc & Pix
+  Caes --> Catalogo
+  Gatos --> Catalogo
+  Catalogo --> Filtro & Card & Modal
+  Catalogo --> useFav
+  Modal --> Ficha
+  AnimalId --> Ficha
+  Adotar --> FAdocao
+  Cadastro --> FCadastro
+  Contato --> FContato
+  FAdocao & FCadastro & FContato --> Msg
+  FAdocao & FCadastro & FContato --> useEnvio
+
+  Home & Sobre & Contato & AnimalId --> apiGet
+  apiGet -.-> gOng & gDep & gAnimalId
+  Catalogo -. "a cada filtro" .-> gAnimais
+  useEnvio -. "envia o formulário" .-> pForms
+  pForms --> valid
+
+  gAnimais --> jAnimais
+  gAnimalId --> jAnimais
+  gDep --> jDep
+  gOng --> jOng
+
+  Modal == "Quero Adotar (?animal=Nome)" ==> Adotar
+
+  classDef pagina fill:#e5eefb,stroke:#3d7ec2,color:#12241c
+  classDef comp fill:#e3f4ec,stroke:#1f9d6b,color:#12241c
+  classDef lib fill:#fbeedc,stroke:#dd8f42,color:#12241c
+  classDef api fill:#f3e8f7,stroke:#8a4fa8,color:#12241c
+  classDef dados fill:#eceae3,stroke:#66716a,color:#12241c
+  class Home,Sobre,Caes,Gatos,AnimalId,Adotar,Cadastro,Contato pagina
+  class Header,Footer,Carrossel,Calc,Pix,Catalogo,Filtro,Card,Modal,Ficha,FAdocao,FCadastro,FContato,Msg comp
+  class apiGet,useFav,useEnvio,valid lib
+  class gAnimais,gAnimalId,gDep,gOng,pForms api
+  class jAnimais,jDep,jOng dados
+```
+
+Cores: azul são páginas, verde são componentes, laranja são funções e hooks, roxo são rotas da API e cinza são os arquivos JSON.
+
+Três caminhos para seguir no diagrama:
+
+1. **Filtrar animais:** `/caes` renderiza o `CatalogoAnimais`. Cada mudança no `FiltroAnimais` faz o catálogo buscar `GET /api/animais`, que lê o `animais.json`, e cada animal vira um `AnimalCard`.
+2. **Do card até a adoção:** "Ver detalhes" abre o `AnimalModal` com a `FichaAnimal`. "Quero Adotar" leva para `/adotar?animal=Nome`, onde o `FormAdocao` já vem preenchido e envia pelo `useEnvioForm` para `POST /api/adocao`.
+3. **Home no servidor:** a Home chama `apiGet()` para `/api/ong` e `/api/depoimentos` e passa os dados para o `CarrosselDepoimentos`, o `CopiarPix` e a `CalculadoraDoacao`. Esses três não chamam a API sozinhos.
+
 ## API para o JSON
 
 Nossa sugestão é criar a API dentro do próprio Next, com Route Handlers. Não custa nada, sobe junto com o site e deixa claro que a API é nossa, não de um serviço de fora.
