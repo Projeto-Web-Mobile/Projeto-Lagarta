@@ -1,0 +1,47 @@
+{
+  "nome": "PetConecta",
+  "slogan": "Adote um amigo, mude uma vida.",
+  "impacto": [
+    {
+      "valor": "+1200",
+      "rotulo": "Vidas Resgatadas"
+    },
+    {
+      "valor": "+900",
+      "rotulo": "Adoções Responsáveis"
+    },
+    {
+      "valor": "+3500",
+      "rotulo": "Vacinas Aplicadas"
+    }
+  ],
+  "pix": {
+    "tipo": "CNPJ",
+    "chave": "12.345.678/0001-90"
+  },
+  "doacao": {
+    "racaoPorDia": 5,
+    "vacina": 60
+  },
+  "contato": {
+    "endereco": "Av. Paulista, 1000 — São Paulo, SP",
+    "telefone": "(11) 99999-9999",
+    "email": "contato@petconecta.com.br",
+    "instagram": "@petconecta.animal",
+    "visitas": "Visitas aos sábados, mediante agendamento"
+  },
+  "faq": [
+    {
+      "pergunta": "Como a ONG se sustenta?",
+      "resposta": "Sobrevivemos exclusivamente de doações físicas, financeiras e parcerias com empresas privadas. Não recebemos ajuda governamental."
+    },
+    {
+      "pergunta": "A Petconecta recolhe animais de rua a pedido?",
+      "resposta": "Atuamos no limite de nossa capacidade física e financeira. Não fazemos recolhimento sob demanda, mas recebemos cadastros de animais para fila de espera e divulgação."
+    },
+    {
+      "pergunta": "Posso visitar o abrigo?",
+      "resposta": "Sim! Nossas visitas ocorrem aos sábados, mediante agendamento prévio, para garantir a tranquilidade e a rotina dos animais."
+    }
+  ]
+}
