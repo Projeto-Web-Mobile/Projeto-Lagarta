@@ -18,8 +18,7 @@ primeira-parte/          Etapa 1: site em HTML e CSS
 
 segunda-parte/           Etapa 2: o mesmo site em Next.js
 ├── petconecta/          projeto Next.js completo (app, components, lib, data, public)
-├── ESPECIFICACAO.md     especificação da migração: rotas, API, componentes e dados
-└── PetConecta-Arquitetura.pdf   resumo: servidor × cliente, rotas e consumo do JSON via API
+└── ESPECIFICACAO.md     especificação da migração: rotas, API, componentes e dados
 ```
 
 ## Primeira parte — HTML e CSS
